@@ -27,8 +27,9 @@ import java.io.IOException;
  */
 public class MapData {
   
-  private String[] countryData=new String[73]; // Array storing country names
-  private String[] countryInfo=new String[73]; // Array storing other country infomation
+  private String[] countryData=new String[100]; // Array storing country names
+  private String[] countryInfo=new String[100]; // Array storing other country information
+  protected int size;
   
   /**
    * Get country name by index.
@@ -78,6 +79,7 @@ public class MapData {
         temp=countries.readLine();
         countryData[index]=country[0]; // store to local Array
         countryInfo[index]=info;
+        size+=1;
         index+=1;
       }    
       // Check: System.out.println(data.toString());
@@ -97,7 +99,8 @@ public class MapData {
   public static void main(String args[]) {
     MapData data=new MapData();
     System.out.println(data.getInfo(2));
-    
+    System.out.println(data.size);
+
   }
   
 }
