@@ -23,65 +23,65 @@ public class WorldGeoInteract {
     System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
         + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
         + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-    String input =  sc.nextLine().substring(0, 1).toUpperCase();
-    
+    char input = sc.next().strip().toUpperCase().charAt(0);
+
     while (true) {
-      if (input.equals("L")) {
+      if (input == 'L') {
         loadMap(table);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("V")) {
+      else if (input == 'V') {
         printMap(table);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("I")) {
+      else if (input == 'I') {
         System.out.println("What is the name for the country");
         String name = sc.nextLine().strip().toLowerCase();
         name = name.substring(0, 1).toUpperCase() + name.substring(1);
         System.out.println("Any description to the country?");
         String desc = sc.nextLine().strip().toLowerCase();
         insertCountry(table, name, desc);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("R")) {
+      else if (input == 'R') {
         System.out.println("Which country you want to remove?");
         String country = sc.nextLine().strip().toLowerCase();
         country = country.substring(0, 1).toUpperCase() + country.substring(1);
         Remove(table, country);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("G")) {
+      else if (input == 'G') {
         System.out.println("Which country do you want to get information?");
         String country = sc.nextLine();
         country = country.substring(0, 1).toUpperCase() + country.substring(1);
         getInfo(table, country);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("A")) {
+      else if (input == 'A') {
         System.out.println("Which country would you like to insert information?");
         String country = sc.nextLine();
         country = country.substring(0, 1).toUpperCase() + country.substring(1);
         System.out.println("Which information you want to add?");
         String info = sc.nextLine();
         addInfo(table, country, info);
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("C")) {
+      else if (input == 'C') {
         table.clear();
         System.out.println("The current World Geological Map has been clear");
         System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
             + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
             + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
 
-      else if (input.equals("E")) {
+      else if (input == 'E') {
         System.out.println("Thanks for using the World Geological Map. Bye-bye!");
         break;
       }
@@ -91,7 +91,7 @@ public class WorldGeoInteract {
         System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
             + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
             + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-        input = sc.nextLine().substring(0, 1).toUpperCase();
+        input = sc.next().strip().toUpperCase().charAt(0);
       }
     }
   }
