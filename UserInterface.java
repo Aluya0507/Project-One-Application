@@ -6,6 +6,7 @@
 // Lecturer: Gary Dahl
 // Notes to Grader: <optional extra notes>
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 //This class is the front end portion of the project
@@ -14,7 +15,7 @@ public class UserInterface {
   private static void options(){
     System.out.println("Welcome to the Worldwide Directory.");
     System.out.println("What would you like to do?");
-    System.out.println("(V)iew current directory");
+//    System.out.println("(V)iew current directory");
     System.out.println("(C)lear the current directory");
     System.out.println("(E)nter a new country");
     System.out.println("(A)dd info to an existing country");
@@ -25,21 +26,23 @@ public class UserInterface {
   }
   
   public static void main(String[] args) {
-    StateTable map = new StateTable();
+    StateTable<String, String> map = new StateTable<String, String>();
     Scanner sc = new Scanner(System.in);
     String input;
     String info;
-    int index;
+    int index = 0;
     
     do {
       options();
       input = sc.nextLine().substring(0, 1).toLowerCase();
       switch(input) {
-        case "v": //TODO
-          System.out.println(map.toString());
-          break;
+//        case "v": //TODO
+//          for(int i = 0; i < map.stateTable.size(); i++) {
+//            System.out.println(map.stateTable);
+//          }
+//          break;
         case "c":
-          map.clear();
+          map.stateTable.clear();
           break;
         case "e":
           System.out.println("Which country would you like add?");
@@ -47,30 +50,34 @@ public class UserInterface {
           map.keyToIndex(input);
           break;
         case "a":
-          System.out.println("Which existing country would you like to add information to?");
-          input = sc.nextLine();
-          System.out.println("What information would you like to add?");
-          info = sc.nextLine();
-          map.insertInfo(input, info);
+            System.out.println("Which country would you like to add information to?");
+            input = sc.nextLine();
+            System.out.println("What information would you like to add?");
+            info = sc.nextLine();
+            map.insertInfo(input, info);
+          
           break;
-        case "g": //TODO
-          System.out.println("Which existing country would you like to know about?");
-          input = sc.nextLine();
-          index = map.keyToIndex(input);
+        case "g":
+          try {
+            System.out.println("Which existing country would you like to know about?");
+            input = sc.nextLine();
+            System.out.println(map.stateTable.get(input));
+          }catch(NoSuchElementException e) {
+              System.out.println(e.getMessage());
+           }
           
           break;
           
         case "r":
           System.out.println("Which existing country would you like to remove?");
           input = sc.nextLine();
-          map.remove(input);
+          map.stateTable.remove(input);
           break;
         case "l":
           break;
         
       }
     }while(!input.equals("q"));
-    
     
     
   }
