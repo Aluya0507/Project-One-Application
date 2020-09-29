@@ -44,11 +44,13 @@ public class UserInterface {
         case "c":
           map.stateTable.clear();
           break;
+          
         case "e":
           System.out.println("Which country would you like add?");
           input = sc.nextLine();
           map.keyToIndex(input);
           break;
+          
         case "a":
             System.out.println("Which country would you like to add information to?");
             input = sc.nextLine();
@@ -57,6 +59,7 @@ public class UserInterface {
             map.insertInfo(input, info);
           
           break;
+          
         case "g":
           try {
             System.out.println("Which existing country would you like to know about?");
@@ -65,7 +68,6 @@ public class UserInterface {
           }catch(NoSuchElementException e) {
               System.out.println(e.getMessage());
            }
-          
           break;
           
         case "r":
@@ -74,11 +76,22 @@ public class UserInterface {
           map.stateTable.remove(input);
           break;
         case "l":
+          MapData data=new MapData();
+          for (int i=0; i<data.size;i++) {
+            map.stateTable.put(data.getCountry(i), data.getInfo(i));
+          }
+          break;
+          
+        case "q":
+          break;
+          
+        default:
+          System.out.println("The command does not exist");
           break;
         
       }
     }while(!input.equals("q"));
-    
+    System.out.println("Thank you for using the Worldwide Directory!");
     
   }
 }
