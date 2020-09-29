@@ -5,7 +5,7 @@
  * @author Zach Austin
  *
  */
-public class StateTable {
+public class StateTable extends HashTableMap {
 	
 	public int capacity;
 	public HashTableMap stateTable = new HashTableMap(10);
