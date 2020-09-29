@@ -24,15 +24,20 @@ public class TestHashTable {
 	public static boolean testPut() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(10);
 		myMap.put("United States",
-				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
+				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., 
+			  GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
 		myMap.put("China",
-				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, Population: 1.4 billion, GDP per capita: $18,116");
+				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, 
+			  Population: 1.4 billion, GDP per capita: $18,116");
 		myMap.put("United Kingdom",
-				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, Population: 66.5 million, GDP per capita: $45,741");
+				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, 
+			  Population: 66.5 million, GDP per capita: $45,741");
 		myMap.put("Russia",
-				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797");
+				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, 
+			  Population: 114.5 million, GDP per capita: $28,797");
 		myMap.put("Germany",
-				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, Population: 82.9 million, GDP per capita: $52,386");
+				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, 
+			  Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.size() != 5) {
 			return false;
 		}
@@ -51,17 +56,23 @@ public class TestHashTable {
 	public static boolean testGet() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(50);
 		myMap.put("United States",
-				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
+				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., 
+			  GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
 		myMap.put("China",
-				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, Population: 1.4 billion, GDP per capita: $18,116");
+				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, 
+			  Population: 1.4 billion, GDP per capita: $18,116");
 		myMap.put("United Kingdom",
-				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, Population: 66.5 million, GDP per capita: $45,741");
+				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, 
+			  Population: 66.5 million, GDP per capita: $45,741");
 		myMap.put("Russia",
-				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797");
+				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, 
+			  Population: 114.5 million, GDP per capita: $28,797");
 		myMap.put("Germany",
-				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, Population: 82.9 million, GDP per capita: $52,386");
+				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, 
+			  Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.get(
-				"Russia") != "Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797") {
+				"Russia") != "Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, 
+		    GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797") {
 			return false;
 		}
 		try {
@@ -86,17 +97,23 @@ public class TestHashTable {
 	public static boolean testRemove() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(50);
 		myMap.put("United States",
-				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
+				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., 
+			  GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
 		myMap.put("China",
-				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, Population: 1.4 billion, GDP per capita: $18,116");
+				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, 
+			  Population: 1.4 billion, GDP per capita: $18,116");
 		myMap.put("United Kingdom",
-				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, Population: 66.5 million, GDP per capita: $45,741");
+				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, 
+			  Population: 66.5 million, GDP per capita: $45,741");
 		myMap.put("Russia",
-				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797");
+				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, 
+			  Population: 114.5 million, GDP per capita: $28,797");
 		myMap.put("Germany",
-				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, Population: 82.9 million, GDP per capita: $52,386");
+				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, 
+			  Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.remove(
-				"United States") != "Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869"
+				"United States") != "Geographic region: North America, Area: 9.83 million km^2, 
+		    Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869"
 				&& myMap.size() != 4) {
 			return false;
 		}
@@ -122,15 +139,20 @@ public class TestHashTable {
 	public static boolean testLoadFactor() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(5);
 		myMap.put("United States",
-				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
+				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., 
+			  GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
 		myMap.put("China",
-				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, Population: 1.4 billion, GDP per capita: $18,116");
+				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, 
+			  Population: 1.4 billion, GDP per capita: $18,116");
 		myMap.put("United Kingdom",
-				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, Population: 66.5 million, GDP per capita: $45,741");
+				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, 
+			  Population: 66.5 million, GDP per capita: $45,741");
 		myMap.put("Russia",
-				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797");
+				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, 
+			  Population: 114.5 million, GDP per capita: $28,797");
 		myMap.put("Germany",
-				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, Population: 82.9 million, GDP per capita: $52,386");
+				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, 
+			  Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.size() != 5) {
 			return false;
 		}
@@ -138,11 +160,14 @@ public class TestHashTable {
 			return false;
 		}
 		myMap.put("France",
-				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, Population: 67.0 million, GDP per capita: $45,893");
+				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, 
+			  Population: 67.0 million, GDP per capita: $45,893");
 		myMap.put("Japan",
-				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, Population: 126.5 million, GDP per capita: $44,246");
+				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, 
+			  Population: 126.5 million, GDP per capita: $44,246");
 		myMap.put("Italy",
-				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, Population: 60.4 million, GDP per capita: $39,676");
+				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, 
+			  Population: 60.4 million, GDP per capita: $39,676");
 		if (myMap.capacity() != 20) {
 			return false;
 		}
@@ -158,11 +183,14 @@ public class TestHashTable {
 	public static boolean testClear() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(10);
 		myMap.put("France",
-				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, Population: 67.0 million, GDP per capita: $45,893");
+				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, 
+			  Population: 67.0 million, GDP per capita: $45,893");
 		myMap.put("Japan",
-				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, Population: 126.5 million, GDP per capita: $44,246");
+				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, 
+			  Population: 126.5 million, GDP per capita: $44,246");
 		myMap.put("Italy",
-				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, Population: 60.4 million, GDP per capita: $39,676");
+				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, 
+			  Population: 60.4 million, GDP per capita: $39,676");
 		myMap.clear();
 		if (myMap.size() != 0) {
 			return false;
@@ -179,11 +207,14 @@ public class TestHashTable {
 	public static boolean testContains() {
 		HashTableMap<String, String> myMap = new HashTableMap<>(10);
 		myMap.put("France",
-				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, Population: 67.0 million, GDP per capita: $45,893");
+				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, 
+			  Population: 67.0 million, GDP per capita: $45,893");
 		myMap.put("Japan",
-				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, Population: 126.5 million, GDP per capita: $44,246");
+				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, 
+			  Population: 126.5 million, GDP per capita: $44,246");
 		myMap.put("Italy",
-				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, Population: 60.4 million, GDP per capita: $39,676");
+				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, 
+			  Population: 60.4 million, GDP per capita: $39,676");
 		if (myMap.containsKey("Italy") != true) {
 			return false;
 		}
@@ -210,11 +241,13 @@ public class TestHashTable {
 			return false;
 		}
 		if (!map.getInfo(10).equals(
-				"Geographic region: Asia\nArea: 99,720 km^2\nCapital: Seoul\nGDP: $1.6 trillion\nPopulation: 51.6 million\nGDP per capita: $43,290.00\nOther info: \n")) {
+				"Geographic region: Asia\nArea: 99,720 km^2\nCapital: Seoul\nGDP: $1.6 trillion\n
+			Population: 51.6 million\nGDP per capita: $43,290.00\nOther info: \n")) {
 			return false;
 		}
 		if (!map.getInfo(0).equals(
-				"Geographic region: North America\nArea: 9.83 million km^2\nCapital: Washington, D.C.\nGDP: $20.5 trillion\nPopulation: 327.2 million\nGDP per capita: $62,869.00\nOther info: \n")) {
+				"Geographic region: North America\nArea: 9.83 million km^2\nCapital: Washington, D.C.\n
+			GDP: $20.5 trillion\nPopulation: 327.2 million\nGDP per capita: $62,869.00\nOther info: \n")) {
 			return false;
 		}
 		return true;
