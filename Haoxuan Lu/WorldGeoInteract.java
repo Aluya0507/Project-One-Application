@@ -22,8 +22,9 @@ public class WorldGeoInteract {
     Scanner sc = new Scanner(System.in);
     System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
         + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-        + "country\n6. (E)xit");
-    String input = sc.nextLine().substring(0, 1).toUpperCase();
+        + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
+    String input =  sc.next().substring(0, 1).toUpperCase();
+    
     while (true) {
       if (input.equals("L")) {
         loadMap(table);
@@ -61,6 +62,25 @@ public class WorldGeoInteract {
         input = sc.nextLine().substring(0, 1).toUpperCase();
       }
 
+      else if (input.equals("A")) {
+        System.out.println("Which country would you like to insert information?");
+        String country = sc.nextLine();
+        country = country.substring(0, 1).toUpperCase() + country.substring(1);
+        System.out.println("Which information you want to add?");
+        String info = sc.nextLine();
+        addInfo(table, country, info);
+        input = sc.nextLine().substring(0, 1).toUpperCase();
+      }
+
+      else if (input.equals("C")) {
+        table.clear();
+        System.out.println("The current World Geological Map has been clear");
+        System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+            + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+            + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
+        input = sc.nextLine().substring(0, 1).toUpperCase();
+      }
+
       else if (input.equals("E")) {
         System.out.println("Thanks for using the World Geological Map. Bye-bye!");
         break;
@@ -68,8 +88,32 @@ public class WorldGeoInteract {
 
       else {
         System.out.println("Sorry there is no such option.");
+        System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+            + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+            + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
         input = sc.nextLine().substring(0, 1).toUpperCase();
       }
+    }
+  }
+
+  /**
+   * This is the method used to add additional information to certain country
+   * 
+   * @param table   The World Geological Map
+   * @param country The country users want to add more information
+   * @param info    The information user want to add
+   */
+  private static void addInfo(StateTable<String, String> table, String country, String info) {
+    try {
+      table.addInfo(country, info);
+      System.out.println("The information has already add to the World Geological Map");
+    } catch (Exception e) {
+      System.out
+          .println("Sorry, the country " + country + " is not inside the The World Geological Map");
+    } finally {
+      System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+          + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+          + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
     }
   }
 
@@ -89,9 +133,9 @@ public class WorldGeoInteract {
       System.out.println(
           "Sorry, the country " + name + " is already inside the The World Geological Map");
     } finally {
-      System.out.println("What you want to do next?\n1. (L)oad the default map\n2. (V)iew the curre"
-          + "nt map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-          + "country\n6. (E)xit");
+      System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+          + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+          + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
     }
   }
 
@@ -109,9 +153,9 @@ public class WorldGeoInteract {
       System.out
           .println("Sorry, the country " + country + " is not inside the The World Geological Map");
     } finally {
-      System.out.println("What you want to do next?\n1. (L)oad the default map\n2. (V)iew the curre"
-          + "nt map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-          + "country\n6. (E)xit");
+      System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+          + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+          + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
     }
   }
 
@@ -126,9 +170,9 @@ public class WorldGeoInteract {
       table.insertInfo(data.getCountry(i), data.getInfo(i));
     }
     System.out.println("Default map loaded successfully.");
-    System.out.println("What you want to do next?\n1. (L)oad the default map\n2. (V)iew the current"
-        + " map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-        + "country\n6. (E)xit");
+    System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+        + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+        + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
   }
 
   /**
@@ -146,9 +190,9 @@ public class WorldGeoInteract {
       System.out
           .println("Sorry, the country " + country + " is not inside the The World Geological Map");
     } finally {
-      System.out.println("What you want to do next?\n1. (L)oad the default map\n2. (V)iew the curre"
-          + "nt map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-          + "country\n6. (E)xit");
+      System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+          + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+          + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
     }
   }
 
@@ -160,8 +204,8 @@ public class WorldGeoInteract {
   private static void printMap(StateTable<String, String> table) {
     System.out.println("Here are the current World Geological Map");
     table.printTable();
-    System.out.println("What you want to do next?\n1. (L)oad the default map\n2. (V)iew the current"
-        + " map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
-        + "country\n6. (E)xit");
+    System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
+        + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
+        + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
   }
 }

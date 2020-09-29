@@ -48,11 +48,23 @@ public class StateTable<KeyType, ValueType> {
   /**
    * This is the method used to get the value of certain key
    * 
-   * @param key
-   * @return
+   * @param key the name of the country
+   * @return a string represent the information for this country
    */
   public String getInfo(String key) {
     return (String) this.stateTable.get(key);
+  }
+
+  /**
+   * This is the method used to add additional information to certain key
+   * 
+   * @param key  the name of the country
+   * @param info a string represent the information for this country
+   */
+  public void addInfo(String key, String info) {
+    String temp = getInfo(key);
+    stateTable.remove(key);
+    this.insertInfo(key, temp + info);
   }
 
   /*
