@@ -23,7 +23,7 @@ public class WorldGeoInteract {
     System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
         + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
         + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-    String input =  sc.next().substring(0, 1).toUpperCase();
+    String input =  sc.nextLine().substring(0, 1).toUpperCase();
     
     while (true) {
       if (input.equals("L")) {
