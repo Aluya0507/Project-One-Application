@@ -80,6 +80,7 @@ public class UserInterface {
           for (int i=0; i<data.size;i++) {
             map.stateTable.put(data.getCountry(i), data.getInfo(i));
           }
+          System.out.println("The default directory has been successfully loaded.");
           break;
           
         case "q":
