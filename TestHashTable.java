@@ -22,20 +22,20 @@ public class TestHashTable {
 	 * key-value pairs added to the hash table, and False when it is now
 	 */
 	public static boolean testPut() {
-		HashTableMap<String, String> myMap = new HashTableMap<>(10);
-		myMap.put("United States",
+		StateTable<String, String> myMap = new StateTable<String, String>();
+		myMap.insertInfo("United States",
 				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., "
 						+ "GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
-		myMap.put("China",
+		myMap.insertInfo("China",
 				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, "
 						+ "Population: 1.4 billion, GDP per capita: $18,116");
-		myMap.put("United Kingdom",
+		myMap.insertInfo("United Kingdom",
 				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, "
 						+ "Population: 66.5 million, GDP per capita: $45,741");
-		myMap.put("Russia",
+		myMap.insertInfo("Russia",
 				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, "
 						+ "Population: 114.5 million, GDP per capita: $28,797");
-		myMap.put("Germany",
+		myMap.insertInfo("Germany",
 				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, "
 						+ "Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.size() != 5) {
@@ -55,29 +55,29 @@ public class TestHashTable {
 	 * not caught.
 	 */
 	public static boolean testGet() {
-		HashTableMap<String, String> myMap = new HashTableMap<>(50);
-		myMap.put("United States",
+		StateTable<String, String> myMap = new StateTable<String, String>();
+		myMap.insertInfo("United States",
 				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., "
 						+ "GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
-		myMap.put("China",
+		myMap.insertInfo("China",
 				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, "
 						+ "Population: 1.4 billion, GDP per capita: $18,116");
-		myMap.put("United Kingdom",
+		myMap.insertInfo("United Kingdom",
 				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, "
 						+ "Population: 66.5 million, GDP per capita: $45,741");
-		myMap.put("Russia",
+		myMap.insertInfo("Russia",
 				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, "
 						+ "Population: 114.5 million, GDP per capita: $28,797");
-		myMap.put("Germany",
+		myMap.insertInfo("Germany",
 				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, "
 						+ "Population: 82.9 million, GDP per capita: $52,386");
-		if (myMap.get(
+		if (myMap.getInfo(
 				"Russia") != "Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, "
 						+ "GDP: $1.7 trillion, Population: 114.5 million, GDP per capita: $28,797") {
 			return false;
 		}
 		try {
-			myMap.get("Japan");
+			myMap.getInfo("Japan");
 			System.out.println(
 					"Problem detected. Calling the get() method with an invalid key does"
 							+ "not throw a NoSuchElementException.");
@@ -99,20 +99,20 @@ public class TestHashTable {
 	 * does not
 	 */
 	public static boolean testRemove() {
-		HashTableMap<String, String> myMap = new HashTableMap<>(50);
-		myMap.put("United States",
+		StateTable<String, String> myMap = new StateTable<String, String>();
+		myMap.insertInfo("United States",
 				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., "
 						+ "GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
-		myMap.put("China",
+		myMap.insertInfo("China",
 				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, "
 						+ "Population: 1.4 billion, GDP per capita: $18,116");
-		myMap.put("United Kingdom",
+		myMap.insertInfo("United Kingdom",
 				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, "
 						+ "Population: 66.5 million, GDP per capita: $45,741");
-		myMap.put("Russia",
+		myMap.insertInfo("Russia",
 				"Geographic region: Eurasia, Area: 17.1 million km^2, Capital: Moscow, GDP: $1.7 trillion, "
 						+ "Population: 114.5 million, GDP per capita: $28,797");
-		myMap.put("Germany",
+		myMap.insertInfo("Germany",
 				"Geographic region: Europe, Area: 357,022 km^2, Capital: Berlin, GDP: $4.0 trillion, "
 						+ "Population: 82.9 million, GDP per capita: $52,386");
 		if (myMap.remove(
@@ -122,7 +122,7 @@ public class TestHashTable {
 			return false;
 		}
 		try {
-			myMap.get("United States");
+			myMap.getInfo("United States");
 			System.out.println(
 					"Problem detected. Calling the get() method with an invalid key does"
 							+ "not throw a NoSuchElementException.");
@@ -186,18 +186,32 @@ public class TestHashTable {
 	 * @return True when the size of the hash table is 0, and False otherwise
 	 */
 	public static boolean testClear() {
-		HashTableMap<String, String> myMap = new HashTableMap<>(10);
-		myMap.put("France",
-				"Geographic region: Europe, Area: 643,801 km^2, Capital: Paris, GDP: $2.8 trillion, "
-						+ "Population: 67.0 million, GDP per capita: $45,893");
-		myMap.put("Japan",
-				"Geographic region: Asia, Area: 377,915 km^2, Capital: Tokyo, GDP: $5.0 trillion, "
-						+ "Population: 126.5 million, GDP per capita: $44,246");
-		myMap.put("Italy",
-				"Geographic region: Europe, Area: 301.340 km^2, Capital: Rome, GDP: $2.1 trillion, "
-						+ "Population: 60.4 million, GDP per capita: $39,676");
+		StateTable<String, String> myMap = new StateTable<String, String>();
+		myMap.insertInfo("United States",
+				"Geographic region: North America, Area: 9.83 million km^2, Capital: Washington D.C., "
+						+ "GDP: $20.5 trillion, Population: 327.2 million, GDP per capita: $62,869");
+		myMap.insertInfo("China",
+				"Geographic region: Asia, Area: 9.6 million km^2, Capital: Beijing, GDP: $13.6 trillion, "
+						+ "Population: 1.4 billion, GDP per capita: $18,116");
+		myMap.insertInfo("United Kingdom",
+				"Geographic region: Europe, Area: 243,610 km^2, Capital: London, GDP: $2.8 trillion, "
+						+ "Population: 66.5 million, GDP per capita: $45,741");
 		myMap.clear();
 		if (myMap.size() != 0) {
+			return false;
+		}
+		return true;
+	}
+
+	/*
+	 * Tests that addInfo method correctly adds info to existing info
+	 */
+	public static boolean testaddInfo() {
+		StateTable<String, String> myMap = new StateTable<String, String>();
+		myMap.insertInfo("Russia", "Geographic region: Eurasia");
+		myMap.addInfo("Russia", "Capital: Moscow");
+		if (!myMap.getInfo("Russia")
+				.equals("Geographic region: Eurasia\n" + "Capital: Moscow")) {
 			return false;
 		}
 		return true;
@@ -273,6 +287,7 @@ public class TestHashTable {
 		System.out.println("testRemove(): " + testRemove());
 		System.out.println("testLoadFactor(): " + testLoadFactor());
 		System.out.println("testClear(): " + testClear());
+		System.out.println("testaddInfo(): " + testaddInfo());
 		System.out.println("testContains(): " + testContains());
 		System.out.println("testData(): " + testData());
 	}
