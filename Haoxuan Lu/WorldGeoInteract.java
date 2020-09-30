@@ -23,17 +23,17 @@ public class WorldGeoInteract {
     System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
         + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
         + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-    char input = sc.next().strip().toUpperCase().charAt(0);
+    char input = sc.nextLine().strip().toUpperCase().charAt(0);
 
     while (true) {
       if (input == 'L') {
         loadMap(table);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'V') {
         printMap(table);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'I') {
@@ -43,7 +43,7 @@ public class WorldGeoInteract {
         System.out.println("Any description to the country?");
         String desc = sc.nextLine().strip().toLowerCase();
         insertCountry(table, name, desc);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'R') {
@@ -51,7 +51,7 @@ public class WorldGeoInteract {
         String country = sc.nextLine().strip().toLowerCase();
         country = country.substring(0, 1).toUpperCase() + country.substring(1);
         Remove(table, country);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'G') {
@@ -59,7 +59,7 @@ public class WorldGeoInteract {
         String country = sc.nextLine();
         country = country.substring(0, 1).toUpperCase() + country.substring(1);
         getInfo(table, country);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'A') {
@@ -69,7 +69,7 @@ public class WorldGeoInteract {
         System.out.println("Which information you want to add?");
         String info = sc.nextLine();
         addInfo(table, country, info);
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'C') {
@@ -78,7 +78,7 @@ public class WorldGeoInteract {
         System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
             + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
             + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'E') {
@@ -91,7 +91,7 @@ public class WorldGeoInteract {
         System.out.println("What you want to do?\n1. (L)oad the default map\n2. (V)iew the current "
             + "map\n3. (I)nsert new country\n4. (R)emove a country\n5. (G)et the information of a "
             + "country\n6. (A)dd information to a country\n7. (C)lear the current map\n8. (E)xit");
-        input = sc.next().strip().toUpperCase().charAt(0);
+        input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
     }
   }
