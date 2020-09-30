@@ -38,34 +38,50 @@ public class WorldGeoInteract {
 
       else if (input == 'I') {
         System.out.println("What is the name for the country");
-        String name = sc.nextLine().strip().toLowerCase();
-        name = name.substring(0, 1).toUpperCase() + name.substring(1);
+        String[] temp = sc.nextLine().strip().toLowerCase().split(" ");
+        String country = "";
+        for (int i = 0; i < temp.length; i++) {
+          country += temp[i].strip().substring(0, 1).toUpperCase() + temp[i].substring(1) + " ";
+        }
+        country = country.substring(0, country.length() - 1);
         System.out.println("Any description to the country?");
         String desc = sc.nextLine().strip().toLowerCase();
-        insertCountry(table, name, desc);
+        insertCountry(table, country, desc);
         input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'R') {
         System.out.println("Which country you want to remove?");
-        String country = sc.nextLine().strip().toLowerCase();
-        country = country.substring(0, 1).toUpperCase() + country.substring(1);
+        String[] temp = sc.nextLine().strip().toLowerCase().split(" ");
+        String country = "";
+        for (int i = 0; i < temp.length; i++) {
+          country += temp[i].strip().substring(0, 1).toUpperCase() + temp[i].substring(1) + " ";
+        }
+        country = country.substring(0, country.length() - 1);
         Remove(table, country);
         input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'G') {
         System.out.println("Which country do you want to get information?");
-        String country = sc.nextLine();
-        country = country.substring(0, 1).toUpperCase() + country.substring(1);
+        String[] temp = sc.nextLine().strip().toLowerCase().split(" ");
+        String country = "";
+        for (int i = 0; i < temp.length; i++) {
+          country += temp[i].strip().substring(0, 1).toUpperCase() + temp[i].substring(1) + " ";
+        }
+        country = country.substring(0, country.length() - 1);
         getInfo(table, country);
         input = sc.nextLine().strip().toUpperCase().charAt(0);
       }
 
       else if (input == 'A') {
         System.out.println("Which country would you like to insert information?");
-        String country = sc.nextLine();
-        country = country.substring(0, 1).toUpperCase() + country.substring(1);
+        String[] temp = sc.nextLine().strip().toLowerCase().split(" ");
+        String country = "";
+        for (int i = 0; i < temp.length; i++) {
+          country += temp[i].strip().substring(0, 1).toUpperCase() + temp[i].substring(1) + " ";
+        }
+        country = country.substring(0, country.length() - 1);
         System.out.println("Which information you want to add?");
         String info = sc.nextLine();
         addInfo(table, country, info);
