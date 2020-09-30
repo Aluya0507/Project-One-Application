@@ -205,6 +205,9 @@ public class TestHashTable {
 
 	/*
 	 * Tests that addInfo method correctly adds info to existing info
+	 *
+	 *@return True when the method correctly tests for a key, and False
+	 * otherwise
 	 */
 	public static boolean testaddInfo() {
 		StateTable<String, String> myMap = new StateTable<String, String>();
@@ -249,6 +252,9 @@ public class TestHashTable {
 	 * respective data into a map. Makes sure the countries and info are
 	 * retrievable when called with the correct line number from the
 	 * countries.csv file.
+	 *
+	 * @return True when the method correctly tests for a key, and False
+	 * otherwise
 	 */
 	public static boolean testData() {
 		MapData map = new MapData();
